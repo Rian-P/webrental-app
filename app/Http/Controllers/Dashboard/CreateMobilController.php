@@ -3,28 +3,24 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\ImageManagerStatic as Image;
 use App\Models\mobil;
 
-class DataKendaraanController extends Controller
+
+class CreateMobilController extends Controller
 {
-    public function index()
-    {
-        $mobil = DB::table('mobils')->get();
-     // mengirim data pegawai ke view index
-     return view('Dashboard.datakendaraan',['mobils' => $mobil]);
-    }
+    
     public $image;
     public $dimensions;
 
     public function createmobil()
     {
      
-       return view('dashboard.datakendaraan');
+       return view('dashboard.createmobil');
     }
     
     
@@ -45,7 +41,7 @@ class DataKendaraanController extends Controller
         $mobil->nopol = $request->input('nopol');
         $mobil->tahun = $request->input('tahun');
         $mobil->harga = $request->input('harga');
-        $mobil->deskripsi_mobil = $request->input('deskripsi_mobil');
+        $mobil->deskripsi = $request->input('deskripsi');
        
 
         
@@ -58,11 +54,11 @@ class DataKendaraanController extends Controller
             });
            
 
-            $destinationPath = 'images/mobil/';
+            $destinationPath = 'images/blog/';
             $file->storeAs($destinationPath, $extension);
             $thumb->save($destinationPath.'/thumb_'.$extension);
-            // $mobil['image'] = $extension;
-            $mobil['image'] = 'thumb_' . $extension;
+            $mobil['image'] = $extension;
+            $mobil['thumbnail'] = 'thumb_' . $extension;
 
 
             // $file->storeAs('images/blog/', $extension);
@@ -89,17 +85,17 @@ class DataKendaraanController extends Controller
 // 	$blog = DB::table('blog')->where('id',$id)->get();
 // 	// passing data pegawai yang didapat ke view edit.blade.php
 // 	return view('landing.editblog',['blog' => $blog]);
-$mobil = mobil::where('id_mobil', $id);
+$mobil =  mobil:: find($id);
 
-return view('dashboard.datakendaraan', [
+return view('landing.datakendaraan', [
     'method'=> "PUT",
-    'action'=> "/datakendaraan/edit/'",
+    'action'=> "/viewblog/edit/{id}'",
     'mobil'=> $mobil
 ]);
 }
 // }
 // update data pegawai
-public function update(Request $request, $id)
+public function update(Request $request)
 {
     // update data pegawai
     // DB::table('blog')->where('id',$request->id)->update([
@@ -110,43 +106,29 @@ public function update(Request $request, $id)
     //     'reading' => $request->reading,
     //     'date' =>  Carbon::now()
     // ]);
-  
-    // $mobil = mobil::where('id_mobil', $id)->first();
-    $mobil = mobil::where('id_mobil', $id)
-            ->update([
-                'nama_kendaraan' => $request->input('nama_kendaraan'),
-                'type' => $request->input('type'),
-                'nopol' => $request->input('nopol'),
-                'tahun' => $request->input('tahun'),
-                'harga' => $request->input('harga'),
-                'deskripsi_mobil' => $request->input('deskripsi_mobil'),
+    $mobil = new mobil;
+    $mobil->nama_kendaraan = $request->input('nama_kendaraan');
+    $mobil->type = $request->input('type');
+    $mobil->nopol = $request->input('nopol');
+    $mobil->tahun = $request->input('tahun');
+    $mobil->harga = $request->input('harga');
+    $mobil->deskripsi = $request->input('deskripsi');
 
-            ]);
-    // $mobil = new mobil;
-    // $mobil->nama_kendaraan = $request->input('nama_kendaraan');
-    // $mobil->type = $request->input('type');
-    // $mobil->nopol = $request->input('nopol');
-    // $mobil->tahun = $request->input('tahun');
-    // $mobil->harga = $request->input('harga');
-    // $mobil->deskripsi_mobil = $request->input('deskripsi_mobil');
-    // $mobil->image = $request->input('tmp_kendaraan');
-    // if($file = $request->hasFile('image')) {
-    //     $file = $request->file('image');
-    //     $extension = $file->getClientOriginalName();
-    //     $thumb = Image::make($file->getRealPath())->resize(500, 500, function ($constraint) {
-    //         $constraint->aspectRatio(); //maintain image ratio
-    //     });
-        
+    if($file = $request->hasFile('image')) {
+        $file = $request->file('image');
+        $extension = $file->getClientOriginalName();
+        $thumb = Image::make($file->getRealPath())->resize(500, 500, function ($constraint) {
+            $constraint->aspectRatio(); //maintain image ratio
+        });
+       
 
-    //     $destinationPath = 'images/mobil/';
-    //     $file->storeAs($destinationPath, $extension);
-    //     $thumb->save($destinationPath.'/thumb_'.$extension);
-    //     // $mobil['image'] = $extension;
-    //     $mobil['image'] = 'thumb_' . $extension;
-    // }
-   
-    
-    // $mobil->save();
+        $destinationPath = 'images/blog/';
+        $file->storeAs($destinationPath, $extension);
+        $thumb->save($destinationPath.'/thumb_'.$extension);
+        $mobil['image'] = $extension;
+        $mobil['thumbnail'] = 'thumb_' . $extension;
+    }
+    $mobil->save();
         
         
         
@@ -165,11 +147,11 @@ public function hapus($id)
     // // alihkan halaman ke halaman pegawai
     // return redirect('/viewblog')-> with('toast_info', "Data berhasil dihapus!");;
 
-    $mobil = mobil::where('id_mobil', $id);
-        // $image = '/image/mobil/'.$mobil->image;
-        // if(File::exists($image)){
-        //     File::delete($image);
-        // }
+    $mobil = mobil::find($id);
+        $image = 'storage/image/blog/'.$mobil->image;
+        if(File::exists($image)){
+            File::delete($image);
+        }
         $mobil->delete();
         
         return back() -> with('toast_info', "Data berhasil dihapus!");

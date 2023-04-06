@@ -10,6 +10,15 @@ use App\http\Controllers\landing\TransaksiController;
 use App\http\Controllers\Dashboard\IndexController;
 use App\http\Controllers\Dashboard\DataUserController;
 use App\http\Controllers\Dashboard\DataKendaraanController;
+use App\http\Controllers\Dashboard\DataPemesananController;
+use App\http\Controllers\Dashboard\DataPenjadwalanController;
+use App\http\Controllers\Dashboard\DashboardController;
+
+
+
+
+
+
 
 
 
@@ -32,6 +41,16 @@ Route::get('/', [HomeController::class, 'index'])->name('home.index');
 Route::get('/pilihanmobil', [MobilController::class, 'index'])->name('mobil.index');
 Route::get('/detail-mobil', [DetailMobilController::class, 'index'])->name('detail-mobil.index');
 
+//mobil
+Route::get('/datakendaraan', [DashboardController::class, 'index'])->name('datakendaraan.index');
+// Route::get('/datakendaraan/createmobil', [DatakendaraanController::class, 'createmobil'])->name('datakendaraan.index');
+Route::post('/datakendaraan/createmobil', [DatakendaraanController::class, 'store'])->name('datakendaraan.store');
+Route::get('/datakendaraan/hapus/{id}', [DatakendaraanController::class, 'hapus'])->name('hapus');
+Route::post('/datakendaraan/update/{id}', [DatakendaraanController::class, 'update'])->name('datakendaraan.update');
+Route::get('/datakendaraaan/edit/', [DatakendaraanController::class, 'edit'])->name('edit');
+
+
+
 
 Route::get('/transaksi', [TransaksiController::class, 'index'])->name('transaksi.index');
 
@@ -39,5 +58,8 @@ Route::get('/transaksi', [TransaksiController::class, 'index'])->name('transaksi
 Route::get('/dashboard', [IndexController::class, 'index'])->name('index.index');
 Route::get('/datauser', [DataUserController::class, 'index'])->name('datauser.index');
 Route::get('/datakendaraan', [DataKendaraanController::class, 'index'])->name('datakendaraan.index');
+Route::get('/dataPemesanan', [DataPemesananController::class, 'index'])->name('dataPemesanan.index');
+Route::get('/datapenjadwalan', [DataPenjadwalanController::class, 'index'])->name('datapenjadwalan.index');
+Route::get('/datadashboard', [DashboardController::class, 'index'])->name('datadashboard.index');
 
 
