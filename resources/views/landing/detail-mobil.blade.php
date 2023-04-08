@@ -54,14 +54,14 @@
         <section class="text-gray-600 font-inter">
             <div class="container mx-auto flex px-24 py-10 items-center justify-center flex-col">
                 <img class="lg:w-2/9 md:w-3/6 w-5/6 mb-12 object-cover object-center " alt="hero"
-                    src="images/background/Ayla.png">
+                src="{{asset('images/mobil/'.$detail_mobil->image)}}"
             </div>
         </section>
 
         <section class="text-gray-600 body-font">
             <div class="container px-24 pb-24 mx-auto flex flex-wrap items-center">
                 <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 bg-white mt-6 lg:mt-0">
-                    <h1 class="text-gray-900 text-3xl title-font font-medium mb-2">Ayla</h1>
+                    <h1 class="text-gray-900 text-3xl title-font font-medium mb-2">{{$detail_mobil->nama_kendaraan}}</h1>
                     <p class="leading-relaxed my-4"> <span class="font-bold">Lepas kunci </span> atau plus sopir </p>
 
                     <div id="myTabContent">
@@ -95,14 +95,7 @@
                                 <div id="collapseOne" class="!visible" data-te-collapse-item data-te-collapse-show
                                     aria-labelledby="headingOne" data-te-parent="#accordionExample">
                                     <div class="py-4 px-5">
-                                        <strong>This is the first item's accordion body.</strong> It is
-                                        shown by default, until the collapse plugin adds the appropriate
-                                        classes that we use to style each element. These classes control
-                                        the overall appearance, as well as the showing and hiding via CSS
-                                        transitions. You can modify any of this with custom CSS or
-                                        overriding our default variables. It's also worth noting that just
-                                        about any HTML can go within the <code>.accordion-body</code>,
-                                        though the transition does limit overflow.
+                                        <Article>{!!$detail_mobil->deskripsi_mobil!!}</Article>
                                     </div>
                                 </div>
                             </div>
@@ -221,9 +214,27 @@
                         <div class="mb-6">
                             <label for="mobil"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">mobil</label>
-                            <input type="text" id=""
+                            <input type="text" id="" disabled
                                 class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
-                                placeholder="contoh : ayla " required>
+                                value="{{$detail_mobil->nama_kendaraan}}" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="type"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">type</label>
+                            <input type="text" id="" disabled
+                                class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+                                value="{{$detail_mobil->type}}" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="harga"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">harga</label>
+                                <select id="countries" name="harga"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                required="required">
+                                <option value="">-- pilih harga --</option>
+                                <option value="{{$detail_mobil->harga_12_jam}}">{{$detail_mobil->harga_12_jam}}/12jam</option>
+                                <option value="{{$detail_mobil->harga_24_jam}}">{{$detail_mobil->harga_24_jam}}/24jam</option>
+                            </select>
                         </div>
                         <div class="mb-6">
                             <label for="dp"

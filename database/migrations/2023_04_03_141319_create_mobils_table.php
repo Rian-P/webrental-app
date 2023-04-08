@@ -17,9 +17,10 @@ return new class extends Migration
             $table->string('type');
             $table->string('nopol');
             $table->string('tahun');
-            $table->string('deskripsi_mobil');
+            $table->string('deskripsi_mobil',900);
             $table->string('image')->nullable();
-            $table->string('harga');
+            $table->string('harga_12_jam');
+            $table->string('harga_24_jam');
             $table->timestamps();
 
 

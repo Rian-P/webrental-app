@@ -13,6 +13,8 @@ use App\http\Controllers\Dashboard\DataKendaraanController;
 use App\http\Controllers\Dashboard\DataPemesananController;
 use App\http\Controllers\Dashboard\DataPenjadwalanController;
 use App\http\Controllers\Dashboard\DashboardController;
+use App\http\Controllers\Dashboard\DataSopirController;
+
 
 
 
@@ -40,14 +42,23 @@ use App\http\Controllers\Dashboard\DashboardController;
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
 Route::get('/pilihanmobil', [MobilController::class, 'index'])->name('mobil.index');
 Route::get('/detail-mobil', [DetailMobilController::class, 'index'])->name('detail-mobil.index');
+Route::get('/detail/{mobil}', [MobilController::class, 'mobilDetail']);
+
 
 //mobil
 Route::get('/datakendaraan', [DashboardController::class, 'index'])->name('datakendaraan.index');
-// Route::get('/datakendaraan/createmobil', [DatakendaraanController::class, 'createmobil'])->name('datakendaraan.index');
 Route::post('/datakendaraan/createmobil', [DatakendaraanController::class, 'store'])->name('datakendaraan.store');
 Route::get('/datakendaraan/hapus/{id}', [DatakendaraanController::class, 'hapus'])->name('hapus');
 Route::post('/datakendaraan/update/{id}', [DatakendaraanController::class, 'update'])->name('datakendaraan.update');
 Route::get('/datakendaraaan/edit/', [DatakendaraanController::class, 'edit'])->name('edit');
+
+//sopir
+Route::get('/datasopir', [DataSopirController::class, 'index'])->name('datasopir.index');
+Route::post('/store', [DataSopirController::class, 'store']);
+Route::get('/datasopir/edit/', [DataSopirController::class, 'edit'])->name('edit');
+Route::post('/datasopir/update/{id}', [DataSopirController::class, 'update'])->name('datasopir.update');
+Route::get('/datasopir/hapus/{id}', [DataSopirController::class, 'hapus'])->name('hapus');
+
 
 
 

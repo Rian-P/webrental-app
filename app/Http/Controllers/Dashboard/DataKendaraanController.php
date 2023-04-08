@@ -44,7 +44,8 @@ class DataKendaraanController extends Controller
         $mobil->type = $request->input('type');
         $mobil->nopol = $request->input('nopol');
         $mobil->tahun = $request->input('tahun');
-        $mobil->harga = $request->input('harga');
+        $mobil->harga_12_jam = $request->input('harga_12_jam');
+        $mobil->harga_24_jam = $request->input('harga_24_jam');
         $mobil->deskripsi_mobil = $request->input('deskripsi_mobil');
        
 
@@ -118,7 +119,9 @@ public function update(Request $request, $id)
                 'type' => $request->input('type'),
                 'nopol' => $request->input('nopol'),
                 'tahun' => $request->input('tahun'),
-                'harga' => $request->input('harga'),
+                'harga_12_jam' => $request->input('harga_12_jam'),
+                'harga_24_jam' => $request->input('harga_24_jam'),
+
                 'deskripsi_mobil' => $request->input('deskripsi_mobil'),
 
             ]);
