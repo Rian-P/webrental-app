@@ -17,39 +17,7 @@
     <body class="bg-white">
 
 
-        <!-- <section class="text-gray-600 body-font overflow-hidden">
-          <div class="container px-5 py-16 mx-auto">
-            <div class="lg:w-4/5 mx-auto flex flex-wrap">
-              <img alt="ecommerce" class="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src="images/background/paket.jpg">
-              <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
-                <h2 class="text-sm title-font text-gray-500 tracking-widest">Wisata Alam</h2>
-                <h1 class="text-gray-900 text-3xl title-font font-medium mb-2">Open Trip Tour Wisata Beautiful of Labuan Bajo - 4D3N</h1>
-                <p class="leading-relaxed my-4"> <span class="font-bold">Highlight </span> : Sailling Pulau Kelor, Pulau Manjarite, Pulau Kalong, Explore pulau Padar, Snorkelling Pulau Sebayur</p>
-                <span class="text-2xl font-bold text-yellow-600 ">IDR 8.250.000</span>
-                <div class="relative overflow-x-auto">
-                  <table class="w-full text-sm text-left text-gray-700 dark:text-gray-400">
-                      <tbody>
-                          <tr class="  dark:bg-gray-800 dark:border-gray-700">
-                              <th scope="row" class=" py-4 font-medium text-gray-900 text-lg dark:text-white">
-                                  Kuota
-                              </th>
-                              <td class=" py-4 text-lg">
-                                  45 orang
-                              </td>
-                          </tr>
-                      </tbody>
-                  </table>
-                </div>
-              <div class="relative mb-4">
-                <input type="number" id="visitors" placeholder="jumlah orang" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required>
-              </div>
-                <div class="flex mt-5">
-                  <button class="text-white bg-black border-0 py-2 px-8 focus:outline-none rounded text-lg">Pesan sekarang</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section> -->
+     
 
         <section class="text-gray-600 font-inter">
             <div class="container mx-auto flex px-24 py-10 items-center justify-center flex-col">
@@ -62,110 +30,8 @@
             <div class="container px-24 pb-24 mx-auto flex flex-wrap items-center">
                 <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 bg-white mt-6 lg:mt-0">
                     <h1 class="text-gray-900 text-3xl title-font font-medium mb-2">{{$detail_mobil->nama_kendaraan}}</h1>
-                    <p class="leading-relaxed my-4"> <span class="font-bold">Lepas kunci </span> atau plus sopir </p>
-
-                    <div id="myTabContent">
-                        <div class="hidden p-4 rounded-lg bg-white dark:bg-gray-800" id="profile" role="tabpanel"
-                            aria-labelledby="profile-tab">
-
-                        </div>
-                        <div class="hidden p-4 rounded-lg bg-white dark:bg-gray-800" id="dashboard" role="tabpanel"
-                            aria-labelledby="dashboard-tab">
-
-                        </div>
-                        <div id="accordionExample">
-                            <div
-                                class="rounded-t-lg border border-neutral-200 bg-white dark:border-neutral-600 dark:bg-neutral-800">
-                                <h2 class="mb-0" id="headingOne">
-                                    <button
-                                        class="group relative flex w-full items-center rounded-t-[15px] border-0 bg-white py-4 px-5 text-left text-base text-neutral-800 transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none dark:bg-neutral-800 dark:text-white [&:not([data-te-collapse-collapsed])]:bg-white [&:not([data-te-collapse-collapsed])]:text-primary [&:not([data-te-collapse-collapsed])]:[box-shadow:inset_0_-1px_0_rgba(229,231,235)] dark:[&:not([data-te-collapse-collapsed])]:bg-neutral-800 dark:[&:not([data-te-collapse-collapsed])]:text-primary-400 dark:[&:not([data-te-collapse-collapsed])]:[box-shadow:inset_0_-1px_0_rgba(75,85,99)]"
-                                        type="button" data-te-collapse-init data-te-target="#collapseOne"
-                                        aria-expanded="true" aria-controls="collapseOne">
-                                        Accordion Item #1
-                                        <span
-                                            class="ml-auto h-5 w-5 shrink-0 rotate-[-180deg] fill-[#336dec] transition-transform duration-200 ease-in-out group-[[data-te-collapse-collapsed]]:rotate-0 group-[[data-te-collapse-collapsed]]:fill-[#212529] motion-reduce:transition-none dark:fill-blue-300 dark:group-[[data-te-collapse-collapsed]]:fill-white">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                                            </svg>
-                                        </span>
-                                    </button>
-                                </h2>
-                                <div id="collapseOne" class="!visible" data-te-collapse-item data-te-collapse-show
-                                    aria-labelledby="headingOne" data-te-parent="#accordionExample">
-                                    <div class="py-4 px-5">
-                                        <Article>{!!$detail_mobil->deskripsi_mobil!!}</Article>
-                                    </div>
-                                </div>
-                            </div>
-                            <div
-                                class="border border-t-0 border-neutral-200 bg-white dark:border-neutral-600 dark:bg-neutral-800">
-                                <h2 class="mb-0" id="headingTwo">
-                                    <button
-                                        class="group relative flex w-full items-center rounded-none border-0 bg-white py-4 px-5 text-left text-base text-neutral-800 transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none dark:bg-neutral-800 dark:text-white [&:not([data-te-collapse-collapsed])]:bg-white [&:not([data-te-collapse-collapsed])]:text-primary [&:not([data-te-collapse-collapsed])]:[box-shadow:inset_0_-1px_0_rgba(229,231,235)] dark:[&:not([data-te-collapse-collapsed])]:bg-neutral-800 dark:[&:not([data-te-collapse-collapsed])]:text-primary-400 dark:[&:not([data-te-collapse-collapsed])]:[box-shadow:inset_0_-1px_0_rgba(75,85,99)]"
-                                        type="button" data-te-collapse-init data-te-collapse-collapsed
-                                        data-te-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        Accordion Item #2
-                                        <span
-                                            class="ml-auto -mr-1 h-5 w-5 shrink-0 rotate-[-180deg] fill-[#336dec] transition-transform duration-200 ease-in-out group-[[data-te-collapse-collapsed]]:mr-0 group-[[data-te-collapse-collapsed]]:rotate-0 group-[[data-te-collapse-collapsed]]:fill-[#212529] motion-reduce:transition-none dark:fill-blue-300 dark:group-[[data-te-collapse-collapsed]]:fill-white">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                                            </svg>
-                                        </span>
-                                    </button>
-                                </h2>
-                                <div id="collapseTwo" class="!visible hidden" data-te-collapse-item
-                                    aria-labelledby="headingTwo" data-te-parent="#accordionExample">
-                                    <div class="py-4 px-5">
-                                        <strong>This is the second item's accordion body.</strong> It is
-                                        hidden by default, until the collapse plugin adds the appropriate
-                                        classes that we use to style each element. These classes control
-                                        the overall appearance, as well as the showing and hiding via CSS
-                                        transitions. You can modify any of this with custom CSS or
-                                        overriding our default variables. It's also worth noting that just
-                                        about any HTML can go within the <code>.accordion-body</code>,
-                                        though the transition does limit overflow.
-                                    </div>
-                                </div>
-                            </div>
-                            <div
-                                class="rounded-b-lg border border-t-0 border-neutral-200 bg-white dark:border-neutral-600 dark:bg-neutral-800">
-                                <h2 class="accordion-header mb-0" id="headingThree">
-                                    <button
-                                        class="group relative flex w-full items-center border-0 bg-white py-4 px-5 text-left text-base text-neutral-800 transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none dark:bg-neutral-800 dark:text-white [&:not([data-te-collapse-collapsed])]:bg-white [&:not([data-te-collapse-collapsed])]:text-primary [&:not([data-te-collapse-collapsed])]:[box-shadow:inset_0_-1px_0_rgba(229,231,235)] dark:[&:not([data-te-collapse-collapsed])]:bg-neutral-800 dark:[&:not([data-te-collapse-collapsed])]:text-primary-400 dark:[&:not([data-te-collapse-collapsed])]:[box-shadow:inset_0_-1px_0_rgba(75,85,99)] [&[data-te-collapse-collapsed]]:rounded-b-[15px] [&[data-te-collapse-collapsed]]:transition-none"
-                                        type="button" data-te-collapse-init data-te-collapse-collapsed
-                                        data-te-target="#collapseThree" aria-expanded="false"
-                                        aria-controls="collapseThree">
-                                        Accordion Item #3
-                                        <span
-                                            class="ml-auto -mr-1 h-5 w-5 shrink-0 rotate-[-180deg] fill-[#336dec] transition-transform duration-200 ease-in-out group-[[data-te-collapse-collapsed]]:mr-0 group-[[data-te-collapse-collapsed]]:rotate-0 group-[[data-te-collapse-collapsed]]:fill-[#212529] motion-reduce:transition-none dark:fill-blue-300 dark:group-[[data-te-collapse-collapsed]]:fill-white">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                                            </svg>
-                                        </span>
-                                    </button>
-                                </h2>
-                                <div id="collapseThree" class="!visible hidden" data-te-collapse-item
-                                    aria-labelledby="headingThree" data-te-parent="#accordionExample">
-                                    <div class="py-4 px-5">
-                                        <strong>This is the third item's accordion body.</strong> It is
-                                        hidden by default, until the collapse plugin adds the appropriate
-                                        classes that we use to style each element. These classes control
-                                        the overall appearance, as well as the showing and hiding via CSS
-                                        transitions. You can modify any of this with custom CSS or
-                                        overriding our default variables. It's also worth noting that just
-                                        about any HTML can go within the <code>.accordion-body</code>,
-                                        though the transition does limit overflow.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <p class="leading-relaxed my-4"> <span class="font-bold">{{$detail_mobil->type}}</span> {{$detail_mobil->tahun}} </p>
+                    <p>{!!$detail_mobil->deskripsi_mobil!!}</p>
                 </div>
                 <div
                     class="lg:w-2/6 md:w-1/2 bg-gray-300 shadow rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">

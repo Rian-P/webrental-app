@@ -16,7 +16,7 @@
 <body>
     <nav class="bg-gray-100 border-gray-200 pt-6 dark:bg-gray-900">
         <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl px-4 md:px-6 py-2.5">
-            <a href="{{ route('home.index') }}" class="flex items-center">
+            <a  class="flex items-center">
                 <img src="images/icon/iconbg.png" class="h-6 mr-3 sm:h-9" alt="Flowbite Logo" />
                 <span class="self-center text-xl font-bold whitespace-nowrap dark:text-white">Prapatan Jaya Trans</span>
             </a>
@@ -49,7 +49,7 @@
                             </li>
                             <li>
                                 <button @click="open = !open" class="text-gray-900 dark:text-white hover:underline">
-                                    <span>Premiun Class</span>
+                                    <span>tentang kami</span>
                                     <svg fill="currentColor" viewBox="0 0 20 20"
                                         :class="{ 'rotate-180': open, 'rotate-0': !open }"
                                         class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
@@ -79,7 +79,7 @@
                                                     </svg>
                                                 </div>
                                                 <div class="ml-3">
-                                                    <p class="font-semibold">Premium Car</p>
+                                                    <p class="font-semibold">informasi</p>
 
                                                 </div>
                                             </a>

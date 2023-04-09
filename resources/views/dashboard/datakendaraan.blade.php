@@ -71,7 +71,7 @@
                                     {{ $p->harga_24_jam }}
                                 </td>
                                 <td class="px-6 py-4">
-                                    {{ $p->deskripsi_mobil }}
+                                    {!!$p->deskripsi_mobil!!}
                                 </td>
                                 <td>
                                     <div class="mb-2">
