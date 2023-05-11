@@ -15,131 +15,21 @@
     </head>
 
     <body class="bg-white">
-
-
-     
-
         <section class="text-gray-600 font-inter">
             <div class="container mx-auto flex px-24 py-10 items-center justify-center flex-col">
-                <img class="lg:w-2/9 md:w-3/6 w-5/6 mb-12 object-cover object-center " alt="hero"
+                <img class="h-auto max-w-sm rounded-lg shadow-none transition-shadow duration-300 ease-in-out hover:shadow-lg hover:shadow-black/30 " alt=""
                 src="{{asset('images/mobil/'.$detail_mobil->image)}}"
             </div>
         </section>
 
         <section class="text-gray-600 body-font">
             <div class="container px-24 pb-24 mx-auto flex flex-wrap items-center">
-                <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 bg-white mt-6 lg:mt-0">
+                <div class="lg:w-2/2 w-full lg:pl-10 lg:py-6 bg-white mt-6 lg:mt-0">
                     <h1 class="text-gray-900 text-3xl title-font font-medium mb-2">{{$detail_mobil->nama_kendaraan}}</h1>
                     <p class="leading-relaxed my-4"> <span class="font-bold">{{$detail_mobil->type}}</span> {{$detail_mobil->tahun}} </p>
                     <p>{!!$detail_mobil->deskripsi_mobil!!}</p>
                 </div>
-                <div
-                    class="lg:w-2/6 md:w-1/2 bg-gray-300 shadow rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
-                    <h2 class="text-blue-900 text-xl mx-auto font-bold title-font mb-5">-Booking-</h2>
-
-                    <form>
-                        <div class="flex items-center justify-center">
-                            <div class="relative mb-3 xl:w-96 bg-gray-50 " data-te-datepicker-init data-te-input-wrapper-init>
-                                <input type="text"
-                                    class="peer block bg-gray-50 min-h-[auto] w-full rounded border-0  py-[0.32rem] px-3 leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                                    placeholder="Select a date" />
-                                <label for="floatingInput"
-                                    class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-neutral-200">
-                                    pengambilan</label>
-                            </div>
-                            <div class="relative mb-3 xl:w-96 bg-gray-50 " data-te-datepicker-init data-te-input-wrapper-init>
-                                <input type="text"
-                                    class="peer bg-gray-50 block min-h-[auto] w-full rounded border-0 py-[0.32rem] px-3 leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                                    placeholder="Select a date" />
-                                <label for="floatingInput"
-                                    class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-neutral-200">
-                                    pengembalian</label>
-                            </div>
-                        </div>
-                        <div class="relative mb-3 l:w-96 bg-gray-50 " data-te-timepicker-init data-te-input-wrapper-init>
-                            <input type="text"
-                                class="peer block bg-gray-50  rounded border-0  py-[0.32rem] px-3 leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                                id="form1" />
-                            <label for="form1"
-                                class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-neutral-200">pengambilan</label>
-                        </div>
-                        <div class="relative mb-3 l:w-96 bg-gray-50  " data-te-timepicker-init data-te-input-wrapper-init>
-                            <input type="text"
-                                class="peer block  rounded border-0  bg-gray-50 py-[0.32rem] px-3 leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                                id="form1" />
-                            <label for="form1"
-                                class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-neutral-200">pengembalian</label>
-                        </div>
-                        <div class="mb-6">
-                            <label for="kotatujuan"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">kota tujuan</label>
-                            <input type="text" id="text"
-                                class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
-                                placeholder="contoh : tegal" required>
-                        </div>
-                        <div class="mb-6">
-                            <label for="mobil"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">mobil</label>
-                            <input type="text" id="" disabled
-                                class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
-                                value="{{$detail_mobil->nama_kendaraan}}" required>
-                        </div>
-                        <div class="mb-6">
-                            <label for="type"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">type</label>
-                            <input type="text" id="" disabled
-                                class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
-                                value="{{$detail_mobil->type}}" required>
-                        </div>
-                        <div class="mb-6">
-                            <label for="harga"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">harga</label>
-                                <select id="countries" name="harga"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                required="required">
-                                <option value="">-- pilih harga --</option>
-                                <option value="{{$detail_mobil->harga_12_jam}}">{{$detail_mobil->harga_12_jam}}/12jam</option>
-                                <option value="{{$detail_mobil->harga_24_jam}}">{{$detail_mobil->harga_24_jam}}/24jam</option>
-                            </select>
-                        </div>
-                        <div class="mb-6">
-                            <label for="dp"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">dp</label>
-                            <input type="text" id=""
-                                class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
-                                placeholder="contoh : minimal 100" required>
-                        </div>
-                        <div class="mb-6">
-                            <label class="flex flex-col w-full h-32 border-4 border-dashed hover:bg-gray-100 hover:border-gray-300"> foto ktp
-                                <div class="flex flex-col items-center justify-center pt-7">
-                                    <svg xmlns="http://www.w3.org/2000/svg"
-                                        class="w-12 h-12 text-gray-400 group-hover:text-gray-600" viewBox="0 0 20 20"
-                                        fill="currentColor">
-                                        <path fill-rule="evenodd"
-                                            d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
-                                            clip-rule="evenodd" />
-                                    </svg>
-                                    <p class="pt-1 text-sm tracking-wider text-gray-400 group-hover:text-gray-600">
-                                        Select a photo</p>
-                                </div>
-                                <input type="file" class="opacity-0" />
-                            </label>
-                        </div>
-                        <div class=" mb-6">
-                            <label for="dp"
-                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">sopir</label>
-                        <input type="text" id=""
-                            class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
-                            placeholder="contoh : tidak atau iya" required>
-
-                        </div>
-                        <button data-modal-target="staticModal" data-modal-toggle="staticModal" type="submit"
-                            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            pesan sekarang</button>
-                    </form>
-                </div>
             </div>
-
 
             <!-- Main modal -->
             <div id="staticModal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true"
@@ -194,7 +84,115 @@
 
         </section>
 
+<section class="mb-6">
+    <div class="container  mx-auto flex items-center justify-center flex-col lg:w-4/6 md:w-1/2 bg-gray-300 shadow rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
+        <h2 class="text-blue-900 text-xl mx-auto font-bold title-font mb-5">-Booking-</h2>
 
+    <form>
+        <div class="flex items-center justify-center">
+            <div class="relative mb-3 xl:w-96 bg-gray-50 " data-te-datepicker-init data-te-input-wrapper-init>
+                <input type="text"
+                    class="peer block bg-gray-50 min-h-[auto] w-full rounded border-0  py-[0.32rem] px-3 leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                    placeholder="Select a date" />
+                <label for="floatingInput"
+                    class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-neutral-200">
+                    pengambilan</label>
+            </div>
+            <div class="relative mb-3 xl:w-96 bg-gray-50 " data-te-datepicker-init data-te-input-wrapper-init>
+                <input type="text"
+                    class="peer bg-gray-50 block min-h-[auto] w-full rounded border-0 py-[0.32rem] px-3 leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                    placeholder="Select a date" />
+                <label for="floatingInput"
+                    class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-neutral-200">
+                    pengembalian</label>
+            </div>
+        </div>
+        <div class="flex mb-2 items-center justify-center">
+        <div class="relative  xl:w-96 bg-gray-50 " data-te-timepicker-init data-te-input-wrapper-init>
+            <input type="text"
+                class="peer block bg-gray-50  rounded border-0  py-[0.32rem] px-3 leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                id="form1" />
+            <label for="form1"
+                class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-neutral-200">pengambilan</label>
+        </div>
+        <div class="relative  xl:w-96 bg-gray-50  " data-te-timepicker-init data-te-input-wrapper-init>
+            <input type="text"
+                class="pee brlock  rounded border-0  bg-gray-50 py-[0.32rem] px-3 leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                id="form1" />
+            <label for="form1"
+                class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-neutral-200">pengembalian</label>
+        </div>
+        </div>
+        <div class="mb-2 flex items-center ">
+
+            <label for="kotatujuan"
+                class="block mb-2 mr-2 text-sm font-medium text-gray-900 dark:text-white">kota tujuan</label>
+            <input type="text" id="text"
+                class="shadow-sm mr-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+                placeholder="contoh : tegal" required>
+            <label for="mobil"
+                class="block  mb-2 mr-2 text-sm font-medium text-gray-900 dark:text-white">mobil</label>
+            <input type="text" id="" disabled
+                class="shadow-sm mr-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+                value="{{$detail_mobil->nama_kendaraan}}" required>
+        </div>
+       
+        <div class="mb-2 flex items-center ">
+            <label for="type"
+                class="block mb-2 mr-2 text-sm font-medium text-gray-900 dark:text-white">type</label>
+            <input type="text" id="" disabled
+                class="shadow-sm mb2 mr-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+                value="{{$detail_mobil->type}}" required>
+            <label for="harga"
+                class="block mb-2 mr-2 text-sm font-medium text-gray-900 dark:text-white">harga</label>
+             <select id="countries" name="harga"
+                class="bg-gray-50 mb-2 mr-2 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                required="required">
+                <option value="">-- pilih harga --</option>
+                <option value="{{$detail_mobil->harga_12_jam}}">{{$detail_mobil->harga_12_jam}}/12jam</option>
+                <option value="{{$detail_mobil->harga_24_jam}}">{{$detail_mobil->harga_24_jam}}/24jam</option>
+            </select>
+        </div>
+     
+        <div class="mb-2 flex items-center">
+            <label for="dp"
+                class="block mb-2 mr-2 text-sm font-medium text-gray-900 dark:text-white">dp</label>
+            <input type="text" id=""
+                class="shadow-sm mb-2 mr-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+                placeholder="contoh : minimal 100" required>
+            <label for="dp"
+                class="block mb-2 mr-2 text-sm font-medium text-gray-900 dark:text-white">sopir</label>
+            <select id="countries" name="sopir"
+                class="bg-gray-50 mb-2 mr-2 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                required="required">
+                <option value="">-- pilih sopir atau tidak --</option>
+                <option value="iya">iya</option>
+                <option value="tidak">tidak</option>
+            </select>
+        </div>
+        <div class="mb-6">
+            <label class="flex flex-col w-full h-32 border-4 border-dashed hover:bg-gray-100 hover:border-gray-300"> foto ktp
+                <div class="flex flex-col items-center justify-center pt-7">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        class="w-12 h-12 text-gray-400 group-hover:text-gray-600" viewBox="0 0 20 20"
+                        fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    <p class="pt-1 text-sm tracking-wider text-gray-400 group-hover:text-gray-600">
+                        Select a photo</p>
+                </div>
+                <input type="file" class="opacity-0" />
+            </label>
+        </div>
+        
+        <button data-modal-target="staticModal" data-modal-toggle="staticModal" type="submit"
+            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+            pesan sekarang</button>
+    </form>
+    </div>
+</section>
     </body>
 
     </html>

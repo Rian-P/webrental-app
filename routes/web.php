@@ -52,6 +52,13 @@ Route::get('/datakendaraan/hapus/{id}', [DatakendaraanController::class, 'hapus'
 Route::post('/datakendaraan/update/{id}', [DatakendaraanController::class, 'update'])->name('datakendaraan.update');
 Route::get('/datakendaraaan/edit/', [DatakendaraanController::class, 'edit'])->name('edit');
 
+//pemesanan
+Route::get('/datapemesanan', [DashboardController::class, 'index'])->name('pemesanan.index');
+Route::post('/datapemesanan/createpemesanan', [DataPemesananController::class, 'store'])->name('datapemesanan.store');
+Route::get('/datapemesanan/hapus/{id}', [DataPemesananController::class, 'hapus'])->name('hapus');
+Route::post('/datapemesanan/update/{id}', [DataPemesananController::class, 'update'])->name('datapemesanan.update');
+Route::get('/datapemesanan/edit/', [DataPemesananController::class, 'edit'])->name('edit');
+
 //sopir
 Route::get('/datasopir', [DataSopirController::class, 'index'])->name('datasopir.index');
 Route::post('/store', [DataSopirController::class, 'store']);
